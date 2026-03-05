@@ -62,7 +62,7 @@ export default function Navbar() {
                     }}
                     className="text-xl font-bold gradient-text"
                 >
-                    Pahri<span className="text-primary">.</span>
+                    Fachri<span className="text-primary">.</span>
                 </a>
 
                 {/* Desktop Nav */}

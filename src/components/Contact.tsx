@@ -175,7 +175,7 @@ export default function Contact() {
                                 <h3 className="text-lg font-semibold text-foreground mb-6">
                                     Social Media 🔗
                                 </h3>
-                                <div className="flex gap-4">
+                                <div className="flex flex-wrap gap-4">
                                     {socialLinks.map((social) => (
                                         <a
                                             key={social.name}

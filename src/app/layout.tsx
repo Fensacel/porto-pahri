@@ -16,11 +16,11 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Pahri — Web Developer & Software Developer",
+  title: "Fachri — Web Developer & Software Developer",
   description:
-    "Portfolio M. Fachri Mufidan (Pahri), siswa RPL SMK Negeri 1 Slawi — Web Developer & Software Developer yang bersemangat dalam pengembangan web modern.",
+    "Portfolio M. Fachri Mufidan, siswa RPL SMK Negeri 1 Slawi — Web Developer & Software Developer yang bersemangat dalam pengembangan web modern.",
   keywords: [
-    "Pahri",
+    "Fachri",
     "M. Fachri Mufidan",
     "Web Developer",
     "Software Developer",
@@ -33,17 +33,17 @@ export const metadata: Metadata = {
   ],
   authors: [{ name: "M. Fachri Mufidan" }],
   openGraph: {
-    title: "Pahri — Web Developer & Software Developer",
+    title: "Fachri — Web Developer & Software Developer",
     description:
       "Portfolio M. Fachri Mufidan, siswa RPL SMK Negeri 1 Slawi yang bersemangat dalam pengembangan web modern.",
     url: "https://pahri.dev",
-    siteName: "Pahri Portfolio",
+    siteName: "Fachri Portfolio",
     type: "website",
     locale: "id_ID",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Pahri — Web Developer",
+    title: "Fachri — Web Developer",
     description: "Portfolio M. Fachri Mufidan — Web Developer & Software Developer",
   },
   robots: {

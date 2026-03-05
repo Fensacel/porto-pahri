@@ -43,7 +43,7 @@ export default function Hero() {
                         className="flex items-center gap-3 mb-6"
                     >
                         <div className="h-px w-8 bg-primary" />
-                        <p className="text-lg font-medium text-primary-light">
+                        <p className="text-base sm:text-lg font-medium text-primary-light">
                             Web Developer / Software Developer
                         </p>
                     </motion.div>
@@ -99,7 +99,7 @@ export default function Hero() {
 
                         {/* Photo container */}
                         <div
-                            className="relative w-64 h-64 sm:w-72 sm:h-72 lg:w-80 lg:h-80 rounded-full overflow-hidden
+                            className="relative w-56 h-56 sm:w-64 sm:h-64 md:w-72 md:h-72 lg:w-80 lg:h-80 rounded-full overflow-hidden
                           border-4 border-card-border group-hover:border-primary/40 transition-all duration-500
                           group-hover:scale-105"
                         >
