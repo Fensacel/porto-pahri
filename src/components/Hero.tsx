@@ -66,7 +66,7 @@ export default function Hero() {
                         className="flex flex-wrap gap-4"
                     >
                         <a
-                            href="/cv-pahri.pdf"
+                            href="/CV%20Fachri%20Mufidan.pdf"
                             download
                             className="group inline-flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-primary to-accent
                          text-white rounded-full font-medium hover:shadow-lg hover:shadow-primary/25
