@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
+import Image from "next/image";
 import { motion } from "framer-motion";
 import { Menu, X } from "lucide-react";
 import ThemeToggle from "./ThemeToggle";
@@ -60,9 +61,15 @@ export default function Navbar() {
                         e.preventDefault();
                         handleClick("#home");
                     }}
-                    className="text-xl font-bold gradient-text"
+                    className="flex items-center gap-2"
                 >
-                    Fachri<span className="text-primary">.</span>
+                    <Image
+                        src="/logo.png"
+                        alt="Fachri Logo"
+                        width={32}
+                        height={32}
+                        className="w-8 h-8"
+                    />
                 </a>
 
                 {/* Desktop Nav */}

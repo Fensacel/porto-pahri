@@ -36,7 +36,7 @@ export const metadata: Metadata = {
     title: "Fachri — Web Developer & Software Developer",
     description:
       "Portfolio M. Fachri Mufidan, siswa RPL SMK Negeri 1 Slawi yang bersemangat dalam pengembangan web modern.",
-    url: "https://pahri.dev",
+    url: "https://mfchmufid.my.id",
     siteName: "Fachri Portfolio",
     type: "website",
     locale: "id_ID",
