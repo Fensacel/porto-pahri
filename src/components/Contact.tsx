@@ -5,6 +5,7 @@ import { Send, Github, Linkedin, Instagram, Mail, CheckCircle } from "lucide-rea
 import SectionHeading from "./SectionHeading";
 import ScrollReveal from "./ScrollReveal";
 import { motion, AnimatePresence } from "framer-motion";
+import { useLang } from "@/context/LanguageContext";
 
 const socialLinks = [
     { name: "GitHub", icon: Github, url: "https://github.com/fensacel", color: "hover:text-gray-400" },
@@ -14,6 +15,7 @@ const socialLinks = [
 ];
 
 export default function Contact() {
+    const { t } = useLang();
     const [submitted, setSubmitted] = useState(false);
     const [formData, setFormData] = useState({
         name: "",
@@ -24,12 +26,10 @@ export default function Contact() {
     const handleSubmit = (e: React.FormEvent) => {
         e.preventDefault();
 
-        // Ganti dengan nomor WhatsApp Anda (gunakan format 62...)
-        const phoneNumber = "6285293467109"; // Ini contoh, ganti dengan nomor aslinya
+        const phoneNumber = "6285293467109";
         const whatsappMessage = `Halo Fachri! 👋\n\n*Nama:* ${formData.name}\n*Email:* ${formData.email}\n\n*Pesan:*\n${formData.message}`;
         const encodedMessage = encodeURIComponent(whatsappMessage);
 
-        // Membuka tab baru ke WhatsApp
         window.open(`https://wa.me/${phoneNumber}?text=${encodedMessage}`, "_blank");
 
         setSubmitted(true);
@@ -44,7 +44,10 @@ export default function Contact() {
             <div className="max-w-6xl mx-auto">
                 <SectionHeading
                     title="Contact"
-                    subtitle="Tertarik untuk berkolaborasi? Jangan ragu untuk menghubungi saya"
+                    subtitle={t(
+                        "Tertarik untuk berkolaborasi? Jangan ragu untuk menghubungi saya",
+                        "Interested in collaborating? Feel free to reach out to me"
+                    )}
                 />
 
                 <div className="grid md:grid-cols-2 gap-12">
@@ -52,7 +55,7 @@ export default function Contact() {
                     <ScrollReveal direction="left">
                         <div className="glass rounded-2xl p-8">
                             <h3 className="text-lg font-semibold text-foreground mb-6">
-                                Kirim Pesan 💬
+                                {t("Kirim Pesan 💬", "Send Message 💬")}
                             </h3>
 
                             <AnimatePresence mode="wait">
@@ -65,9 +68,14 @@ export default function Contact() {
                                         className="flex flex-col items-center justify-center py-12 text-center"
                                     >
                                         <CheckCircle className="w-16 h-16 text-green-500 mb-4" />
-                                        <p className="text-lg font-medium text-foreground">Pesan Terkirim!</p>
+                                        <p className="text-lg font-medium text-foreground">
+                                            {t("Pesan Terkirim!", "Message Sent!")}
+                                        </p>
                                         <p className="text-sm text-muted-foreground mt-1">
-                                            Terima kasih, saya akan segera membalas.
+                                            {t(
+                                                "Terima kasih, saya akan segera membalas.",
+                                                "Thank you, I will reply as soon as possible."
+                                            )}
                                         </p>
                                     </motion.div>
                                 ) : (
@@ -81,7 +89,7 @@ export default function Contact() {
                                     >
                                         <div>
                                             <label htmlFor="name" className="block text-sm font-medium text-muted-foreground mb-1.5">
-                                                Nama
+                                                {t("Nama", "Name")}
                                             </label>
                                             <input
                                                 id="name"
@@ -92,7 +100,7 @@ export default function Contact() {
                                                 className="w-full px-4 py-3 rounded-xl bg-muted border border-card-border text-foreground
                                    placeholder:text-muted-foreground/50 focus:outline-none focus:ring-2 focus:ring-primary/50
                                    focus:border-primary/50 transition-all duration-300"
-                                                placeholder="Nama lengkap Anda"
+                                                placeholder={t("Nama lengkap Anda", "Your full name")}
                                             />
                                         </div>
 
@@ -115,7 +123,7 @@ export default function Contact() {
 
                                         <div>
                                             <label htmlFor="message" className="block text-sm font-medium text-muted-foreground mb-1.5">
-                                                Pesan
+                                                {t("Pesan", "Message")}
                                             </label>
                                             <textarea
                                                 id="message"
@@ -126,7 +134,7 @@ export default function Contact() {
                                                 className="w-full px-4 py-3 rounded-xl bg-muted border border-card-border text-foreground
                                    placeholder:text-muted-foreground/50 focus:outline-none focus:ring-2 focus:ring-primary/50
                                    focus:border-primary/50 transition-all duration-300 resize-none"
-                                                placeholder="Tulis pesan Anda di sini..."
+                                                placeholder={t("Tulis pesan Anda di sini...", "Write your message here...")}
                                             />
                                         </div>
 
@@ -137,7 +145,7 @@ export default function Contact() {
                                  hover:-translate-y-0.5 transition-all duration-300 cursor-pointer"
                                         >
                                             <Send className="w-4 h-4" />
-                                            Kirim Pesan
+                                            {t("Kirim Pesan", "Send Message")}
                                         </button>
                                     </motion.form>
                                 )}
@@ -150,7 +158,7 @@ export default function Contact() {
                         <div className="space-y-6">
                             <div className="glass rounded-2xl p-8">
                                 <h3 className="text-lg font-semibold text-foreground mb-4">
-                                    Info Kontak 📬
+                                    {t("Info Kontak 📬", "Contact Info 📬")}
                                 </h3>
                                 <div className="space-y-3 text-muted-foreground">
                                     <p className="flex items-center gap-3">
@@ -195,10 +203,10 @@ export default function Contact() {
 
                             <div className="glass rounded-2xl p-8">
                                 <h3 className="text-lg font-semibold text-foreground mb-2">
-                                    Lokasi 📍
+                                    {t("Lokasi 📍", "Location 📍")}
                                 </h3>
                                 <p className="text-muted-foreground">
-                                    Slawi, Kabupaten Tegal, Jawa Tengah, Indonesia
+                                    Slawi, {t("Kabupaten Tegal, Jawa Tengah", "Tegal Regency, Central Java")}, Indonesia
                                 </p>
                             </div>
                         </div>

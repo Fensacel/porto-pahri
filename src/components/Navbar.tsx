@@ -5,6 +5,7 @@ import Image from "next/image";
 import { motion } from "framer-motion";
 import { Menu, X } from "lucide-react";
 import ThemeToggle from "./ThemeToggle";
+import LanguageToggle from "./LanguageToggle";
 
 const navLinks = [
     { name: "Home", href: "#home" },
@@ -97,13 +98,15 @@ export default function Navbar() {
                             <span className="relative z-10">{link.name}</span>
                         </a>
                     ))}
-                    <div className="ml-4">
+                    <div className="ml-4 flex items-center gap-2">
+                        <LanguageToggle />
                         <ThemeToggle />
                     </div>
                 </div>
 
                 {/* Mobile Controls */}
                 <div className="flex md:hidden items-center gap-3">
+                    <LanguageToggle />
                     <ThemeToggle />
                     <button
                         onClick={() => setMobileOpen(!mobileOpen)}

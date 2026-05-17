@@ -9,10 +9,11 @@ import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
 import AnimatedBackground from "@/components/AnimatedBackground";
 import LoadingScreen from "@/components/LoadingScreen";
+import { LanguageProvider } from "@/context/LanguageContext";
 
 export default function Home() {
   return (
-    <>
+    <LanguageProvider>
       <LoadingScreen />
       <AnimatedBackground />
       <Navbar />
@@ -26,6 +27,6 @@ export default function Home() {
       </main>
 
       <Footer />
-    </>
+    </LanguageProvider>
   );
 }

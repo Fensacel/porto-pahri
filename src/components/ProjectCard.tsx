@@ -9,9 +9,10 @@ import type { Project } from "@/data/projects";
 interface ProjectCardProps {
     project: Project;
     index: number;
+    lang?: "id" | "en";
 }
 
-export default function ProjectCard({ project, index }: ProjectCardProps) {
+export default function ProjectCard({ project, index, lang = "id" }: ProjectCardProps) {
     const [imgError, setImgError] = useState(false);
 
     // Reset error state if image source changes (fixes hot reload issues)
@@ -77,10 +78,10 @@ export default function ProjectCard({ project, index }: ProjectCardProps) {
             {/* Content */}
             <div className="p-6">
                 <h3 className="text-lg font-semibold text-foreground mb-2 group-hover:text-primary transition-colors duration-300">
-                    {project.title}
+                    {lang === "en" && project.titleEn ? project.titleEn : project.title}
                 </h3>
                 <p className="text-sm text-muted-foreground leading-relaxed mb-4 line-clamp-3">
-                    {project.description}
+                    {lang === "en" && project.descriptionEn ? project.descriptionEn : project.description}
                 </p>
 
                 {/* Tech badges */}

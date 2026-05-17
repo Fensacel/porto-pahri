@@ -3,8 +3,11 @@
 import Image from "next/image";
 import { motion } from "framer-motion";
 import { Download, ArrowDown, Mail } from "lucide-react";
+import { useLang } from "@/context/LanguageContext";
 
 export default function Hero() {
+    const { t } = useLang();
+
     const handleScroll = (href: string) => {
         const el = document.querySelector(href);
         el?.scrollIntoView({ behavior: "smooth" });
@@ -54,9 +57,10 @@ export default function Hero() {
                         transition={{ delay: 0.5, duration: 0.6 }}
                         className="text-muted-foreground text-base leading-relaxed max-w-lg mb-8"
                     >
-                        Siswa jurusan Rekayasa Perangkat Lunak (RPL) di SMK Negeri 1 Slawi
-                        yang bersemangat dalam pengembangan web, saat ini sedang mendalami
-                        ekosistem JavaScript dan PHP.
+                        {t(
+                            "Lulusan jurusan Rekayasa Perangkat Lunak (RPL) dari SMK Negeri 1 Slawi yang bersemangat dalam pengembangan web, saat ini sedang mencari peluang untuk berkembang dan berkontribusi secara profesional.",
+                            "A graduate of Software Engineering (RPL) from SMK Negeri 1 Slawi with a passion for web development, currently seeking opportunities to grow and contribute professionally."
+                        )}
                     </motion.p>
 
                     <motion.div
@@ -81,7 +85,7 @@ export default function Hero() {
                          glass hover:border-primary/30 hover:-translate-y-0.5 transition-all duration-300 cursor-pointer"
                         >
                             <Mail className="w-4 h-4" />
-                            Contact Me
+                            {t("Hubungi Saya", "Contact Me")}
                         </button>
                     </motion.div>
                 </div>
@@ -125,7 +129,7 @@ export default function Hero() {
                             transition={{ duration: 3.5, repeat: Infinity, ease: "easeInOut" }}
                             className="absolute -bottom-2 -left-2 glass px-3 py-1.5 rounded-full text-xs font-medium text-accent"
                         >
-                            🎓 RPL Student
+                            🎓 {t("Lulusan RPL", "RPL Graduate")}
                         </motion.div>
                     </div>
                 </motion.div>

@@ -5,6 +5,7 @@ import { skills } from "@/data/skills";
 import SectionHeading from "./SectionHeading";
 import SkillBar from "./SkillBar";
 import ScrollReveal from "./ScrollReveal";
+import { useLang } from "@/context/LanguageContext";
 
 /* ── Core Tech Stack (icon grid) ──────────────────────── */
 
@@ -54,6 +55,7 @@ const techItems: TechItem[] = [
 ];
 
 export default function Skills() {
+    const { t } = useLang();
     return (
         <section id="skills" className="py-24 px-6">
             <div className="max-w-6xl mx-auto space-y-20">
@@ -62,7 +64,10 @@ export default function Skills() {
                 <div>
                     <SectionHeading
                         title="Skills"
-                        subtitle="Teknologi dan tools yang saya gunakan dalam pengembangan web"
+                        subtitle={t(
+                            "Teknologi dan tools yang saya gunakan dalam pengembangan web",
+                            "Technologies and tools I use in web development"
+                        )}
                     />
 
                     <div className="grid md:grid-cols-2 gap-12 items-start">
@@ -121,7 +126,10 @@ export default function Skills() {
                 <div>
                     <SectionHeading
                         title="Tech Ecosystem"
-                        subtitle="Tools dan teknologi yang saya gunakan untuk membangun solusi digital."
+                        subtitle={t(
+                            "Tools dan teknologi yang saya gunakan untuk membangun solusi digital.",
+                            "Tools and technologies I use to build digital solutions."
+                        )}
                     />
 
                     <ScrollReveal>
