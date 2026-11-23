@@ -15,12 +15,12 @@ interface CoreTech {
 }
 
 const coreTechStack: CoreTech[] = [
-    { name: "HTML", logo: "/logos/html.svg", color: "#e34f26" },
-    { name: "CSS", logo: "/logos/css.svg", color: "#1572b6" },
-    { name: "JavaScript", logo: "/logos/javascript.svg", color: "#f7df1e" },
-    { name: "PHP", logo: "/logos/php.svg", color: "#777bb4" },
+    { name: "Next.js", logo: "/logos/nextjs.svg", color: "#000000" },
+    { name: "Laravel", logo: "/logos/laravel.svg", color: "#ff2d20" },
     { name: "React", logo: "/logos/react.svg", color: "#61dafb" },
+    { name: "TypeScript", logo: "/logos/typescript.svg", color: "#3178c6" },
     { name: "MySQL", logo: "/logos/mysql.svg", color: "#4479a1" },
+    { name: "Tailwind CSS", logo: "/logos/tailwindcss.svg", color: "#06b6d4" },
 ];
 
 /* ── Tech Ecosystem (pill badges) ─────────────────────── */
@@ -33,24 +33,24 @@ interface TechItem {
 }
 
 const techItems: TechItem[] = [
-    { name: "JavaScript", logo: "/logos/javascript.svg", color: "#f7df1e" },
-    { name: "TypeScript", logo: "/logos/typescript.svg", color: "#3178c6" },
-    { name: "React", logo: "/logos/react.svg", color: "#61dafb" },
     { name: "Next.js", logo: "/logos/nextjs.svg", color: "#000000", featured: true },
+    { name: "Laravel", logo: "/logos/laravel.svg", color: "#ff2d20", featured: true },
+    { name: "React", logo: "/logos/react.svg", color: "#61dafb", featured: true },
+    { name: "TypeScript", logo: "/logos/typescript.svg", color: "#3178c6" },
+    { name: "JavaScript", logo: "/logos/javascript.svg", color: "#f7df1e" },
     { name: "Tailwind CSS", logo: "/logos/tailwindcss.svg", color: "#06b6d4" },
-    { name: "Node.js", logo: "/logos/nodejs.svg", color: "#339933" },
-    { name: "Python", logo: "/logos/python.svg", color: "#3776ab" },
-    { name: "Java", logo: "/logos/java.svg", color: "#e11d29" },
     { name: "PHP", logo: "/logos/php.svg", color: "#777bb4" },
-    { name: "Laravel", logo: "/logos/laravel.svg", color: "#ff2d20" },
-    { name: "Docker", logo: "/logos/docker.svg", color: "#2496ed" },
-    { name: "Git", logo: "/logos/git.svg", color: "#f05032" },
-    { name: "Figma", logo: "/logos/figma.svg", color: "#f24e1e" },
+    { name: "MySQL", logo: "/logos/mysql.svg", color: "#4479a1" },
     { name: "PostgreSQL", logo: "/logos/postgresql.svg", color: "#4169e1" },
-    { name: "MongoDB", logo: "/logos/mongodb.svg", color: "#47a248" },
+    { name: "Node.js", logo: "/logos/nodejs.svg", color: "#339933" },
+    { name: "Git", logo: "/logos/git.svg", color: "#f05032" },
+    { name: "Docker", logo: "/logos/docker.svg", color: "#2496ed" },
+    { name: "Figma", logo: "/logos/figma.svg", color: "#f24e1e" },
     { name: "Prisma", logo: "/logos/prisma.svg", color: "#2d3748" },
     { name: "Supabase", logo: "/logos/supabase.svg", color: "#3ecf8e" },
     { name: "Vercel", logo: "/logos/vercel.svg", color: "#000000" },
+    { name: "Python", logo: "/logos/python.svg", color: "#3776ab" },
+    { name: "Java", logo: "/logos/java.svg", color: "#e11d29" },
 ];
 
 export default function Skills() {
@@ -68,10 +68,13 @@ export default function Skills() {
                     <div className="grid md:grid-cols-2 gap-12 items-start">
                         {/* Progress Bars */}
                         <ScrollReveal direction="left">
-                            <div className="glass rounded-2xl p-8 space-y-6">
-                                <h3 className="text-lg font-semibold text-foreground mb-6">
-                                    Proficiency Level
-                                </h3>
+                            <div className="glass rounded-3xl p-6 md:p-8 space-y-6 border border-card-border">
+                                <div className="flex items-center justify-between mb-4">
+                                    <h3 className="text-base font-bold text-foreground tracking-tight">
+                                        Core Stack Proficiency
+                                    </h3>
+                                    <span className="text-xs font-mono text-muted-foreground uppercase">Benchmark</span>
+                                </div>
                                 {skills.map((skill, index) => (
                                     <SkillBar key={skill.name} skill={skill} index={index} />
                                 ))}
@@ -80,34 +83,33 @@ export default function Skills() {
 
                         {/* Tech Icons Grid */}
                         <ScrollReveal direction="right">
-                            <div className="glass rounded-2xl p-8">
-                                <h3 className="text-lg font-semibold text-foreground mb-6">
-                                    Tech Stack
-                                </h3>
-                                <div className="grid grid-cols-2 sm:grid-cols-3 gap-4">
+                            <div className="glass rounded-3xl p-6 md:p-8 border border-card-border">
+                                <div className="flex items-center justify-between mb-6">
+                                    <h3 className="text-base font-bold text-foreground tracking-tight">
+                                        Primary Frameworks
+                                    </h3>
+                                    <span className="text-xs font-mono text-muted-foreground uppercase">Production</span>
+                                </div>
+                                <div className="grid grid-cols-2 sm:grid-cols-3 gap-3">
                                     {coreTechStack.map((tech, index) => (
-                                        <ScrollReveal key={tech.name} delay={index * 0.08}>
+                                        <ScrollReveal key={tech.name} delay={index * 0.05}>
                                             <div
-                                                className="group flex flex-col items-center gap-3 p-4 rounded-xl
-                                                 hover:bg-muted transition-all duration-300 cursor-default
-                                                 hover:-translate-y-2"
+                                                className="group flex flex-col items-center gap-2.5 p-4 rounded-2xl glass-subtle
+                                                 border border-card-border hover:border-primary/40 transition-all duration-300 cursor-default
+                                                 hover:-translate-y-1"
                                             >
-                                                <div className="group-hover:scale-110 transition-transform duration-300">
+                                                <div className="w-12 h-12 flex items-center justify-center rounded-xl bg-muted group-hover:scale-105 transition-transform">
                                                     <Image
                                                         src={tech.logo}
                                                         alt={tech.name}
-                                                        width={48}
-                                                        height={48}
-                                                        className="drop-shadow-lg"
+                                                        width={32}
+                                                        height={32}
+                                                        className="drop-shadow-sm"
                                                     />
                                                 </div>
-                                                <span className="text-xs font-medium text-muted-foreground group-hover:text-foreground transition-colors">
+                                                <span className="text-xs font-mono font-medium text-foreground">
                                                     {tech.name}
                                                 </span>
-                                                <div
-                                                    className="w-8 h-1 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300"
-                                                    style={{ background: tech.color }}
-                                                />
                                             </div>
                                         </ScrollReveal>
                                     ))}
@@ -125,29 +127,26 @@ export default function Skills() {
                     />
 
                     <ScrollReveal>
-                        <div className="flex flex-wrap justify-center gap-3">
-                            {techItems.map((tech, index) => (
+                        <div className="flex flex-wrap justify-center gap-2.5 max-w-4xl mx-auto">
+                            {techItems.map((tech) => (
                                 <div
                                     key={tech.name}
                                     className={`
-                                        inline-flex items-center gap-2 px-4 py-2 rounded-full
-                                        text-sm font-medium transition-all duration-300
+                                        inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full
+                                        text-xs font-mono transition-all duration-200
                                         cursor-default select-none
                                         hover:-translate-y-0.5 hover:shadow-md
                                         ${tech.featured
-                                            ? "bg-foreground text-background shadow-sm"
-                                            : "bg-muted/60 text-foreground border border-border/50 hover:border-border"
+                                            ? "bg-foreground text-background shadow-sm font-semibold"
+                                            : "glass-subtle text-foreground border border-card-border hover:border-primary/40"
                                         }
                                     `}
-                                    style={{
-                                        animationDelay: `${index * 50}ms`,
-                                    }}
                                 >
                                     <Image
                                         src={tech.logo}
                                         alt={tech.name}
-                                        width={18}
-                                        height={18}
+                                        width={15}
+                                        height={15}
                                         className={`${tech.featured ? "invert dark:invert-0" : ""}`}
                                     />
                                     <span>{tech.name}</span>

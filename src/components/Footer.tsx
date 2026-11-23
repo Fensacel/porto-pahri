@@ -5,6 +5,7 @@ import { Heart } from "lucide-react";
 const footerLinks = [
     { name: "Home", href: "#home" },
     { name: "About", href: "#about" },
+    { name: "Experience", href: "#experience" },
     { name: "Skills", href: "#skills" },
     { name: "Projects", href: "#projects" },
     { name: "Contact", href: "#contact" },
@@ -17,17 +18,17 @@ export default function Footer() {
     };
 
     return (
-        <footer className="border-t border-card-border py-8 px-6">
-            <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-between gap-4">
+        <footer className="px-6 pb-10">
+            <div className="retro-footer max-w-[1180px] mx-auto flex flex-col md:flex-row items-center justify-between">
                 {/* Copyright */}
-                <p className="text-sm text-muted-foreground flex items-center gap-1">
-                    © {new Date().getFullYear()} Pahri. Made with
-                    <Heart className="w-3.5 h-3.5 text-red-500 fill-red-500 inline" />
-                    using Next.js
-                </p>
+                <div className="text-center md:text-left">
+                    <p className="text-xs font-mono text-muted-foreground">
+                        © {new Date().getFullYear()} M. Fachri Mufidan. Engineered with Next.js & Tailwind CSS.
+                    </p>
+                </div>
 
                 {/* Quick Links */}
-                <div className="flex flex-wrap justify-center items-center gap-4">
+                <div className="flex flex-wrap justify-center items-center gap-1.5">
                     {footerLinks.map((link) => (
                         <a
                             key={link.name}
@@ -36,7 +37,7 @@ export default function Footer() {
                                 e.preventDefault();
                                 handleClick(link.href);
                             }}
-                            className="text-xs text-muted-foreground hover:text-primary transition-colors duration-300"
+                            className="px-3 py-1 rounded-full text-xs font-mono text-muted-foreground hover:text-foreground hover:bg-muted/60 transition-colors duration-200"
                         >
                             {link.name}
                         </a>

@@ -16,26 +16,30 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Fachri — Web Developer & Software Developer",
+  title: "M. Fachri Mufidan — Full Stack Developer",
   description:
-    "Portfolio M. Fachri Mufidan, siswa RPL SMK Negeri 1 Slawi — Web Developer & Software Developer yang bersemangat dalam pengembangan web modern.",
+    "Portfolio M. Fachri Mufidan — Full Stack Developer & BNSP Certified Web Developer. Berpengalaman di Next.js, Laravel, arsitektur database, dan modern web application.",
   keywords: [
     "Fachri",
     "M. Fachri Mufidan",
-    "Web Developer",
+    "Full Stack Developer",
     "Software Developer",
+    "BNSP Certified",
+    "CV Vodeco Digital Mediatama",
     "Portfolio",
     "RPL",
     "SMK Negeri 1 Slawi",
+    "Cakrawala University",
     "Next.js",
+    "Laravel",
     "React",
     "PHP",
   ],
   authors: [{ name: "M. Fachri Mufidan" }],
   openGraph: {
-    title: "Fachri — Web Developer & Software Developer",
+    title: "M. Fachri Mufidan — Full Stack Developer",
     description:
-      "Portfolio M. Fachri Mufidan, siswa RPL SMK Negeri 1 Slawi yang bersemangat dalam pengembangan web modern.",
+      "Portfolio M. Fachri Mufidan — Full Stack Developer & BNSP Certified Web Developer. Berpengalaman di Next.js, Laravel, arsitektur database, dan modern web application.",
     url: "https://mfchmufid.my.id",
     siteName: "Fachri Portfolio",
     type: "website",
@@ -43,8 +47,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Fachri — Web Developer",
-    description: "Portfolio M. Fachri Mufidan — Web Developer & Software Developer",
+    title: "M. Fachri Mufidan — Full Stack Developer",
+    description: "Portfolio M. Fachri Mufidan — Full Stack Developer & BNSP Certified Web Developer",
   },
   robots: {
     index: true,

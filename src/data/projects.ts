@@ -6,37 +6,45 @@ export interface Project {
     image: string;
     githubUrl: string;
     liveUrl: string;
+    featured?: boolean;
+    role?: string;
 }
 
 export const projects: Project[] = [
     {
         id: 1,
-        title: "Website File Manajemen",
+        title: "Website Arsip & Manajemen File",
         description:
-            "Website untuk manajemen file yang aman dan transparan. Dilengkapi fitur autentikasi, serta dashboard admin untuk mengelola file.",
+            "Sistem arsip digital berbasis web untuk tata kelola dokumen yang aman, terstruktur, dan transparan. Dilengkapi manajemen hak akses multi-level (role-based), pencatatan surat masuk/keluar, audit riwayat, serta dashboard analytics.",
         techStack: ["PHP", "MySQL", "Bootstrap", "JavaScript"],
         image: "/project/manajemen-surat.jpeg",
         githubUrl: "https://github.com/Fensacel/e-arsip",
         liveUrl: "#",
+        featured: true,
+        role: "Full Stack Developer",
     },
     {
         id: 2,
         title: "Website Degrave Studio",
         description:
-            "Website untuk Degrave Studio yang bergerak di bidang jasa desain grafis dan percetakan. Website ini digunakan untuk menampilkan portofolio, jasa yang ditawarkan, dan informasi kontak.",
-        techStack: ["React", "Node.js", "Tailwind CSS", "MySQL"],
+            "Platform web resmi untuk Degrave Studio di bidang industri kreatif desain grafis dan percetakan. Menampilkan showcase portofolio interaktif, katalog layanan, form konsultasi pesanan, dan antarmuka responsif berperforma tinggi.",
+        techStack: ["React", "Node.js", "Tailwind CSS"],
         image: "/project/degrave.png",
         githubUrl: "https://github.com/Fensacel/project",
-        liveUrl: "#",
+        liveUrl: "https://degravestudio.com/",
+        featured: true,
+        role: "Frontend & UI Developer",
     },
     {
         id: 3,
-        title: "Website E-commerce Sederhana",
+        title: "Platform E-Commerce Modern",
         description:
-            "Platform e-commerce dengan fitur katalog produk, keranjang belanja, checkout, dan panel admin. Mengimplementasikan UI/UX modern dengan performa optimal.",
-        techStack: ["Laravel", "Tailwind CSS", "Mysql"],
+            "Aplikasi e-commerce komprehensif dengan katalog produk interaktif, sistem keranjang belanja (cart), alur checkout efisien, simulasi integrasi payment gateway, serta panel admin untuk manajemen inventaris & pesanan.",
+        techStack: ["Laravel", "Tailwind CSS", "MySQL", "REST API"],
         image: "/project/ecommerce.png",
         githubUrl: "https://github.com/Fensacel/testing-payment",
         liveUrl: "#",
+        featured: true,
+        role: "Backend & Full Stack Developer",
     },
 ];

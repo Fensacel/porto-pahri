@@ -3,27 +3,32 @@
 export default function AnimatedBackground() {
     return (
         <div className="fixed inset-0 -z-10 overflow-hidden pointer-events-none">
-            {/* Gradient blob 1 */}
+            {/* Top Center Glow (Modern Vercel / Linear look) */}
             <div
-                className="absolute -top-40 -left-40 w-80 h-80 rounded-full opacity-20 dark:opacity-10
-                    bg-gradient-to-br from-blue-500 to-cyan-400 blur-3xl animate-blob"
+                className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[500px] rounded-full
+                    bg-gradient-to-b from-blue-500/15 via-cyan-500/10 to-transparent blur-[120px] dark:from-blue-600/20 dark:via-cyan-600/10"
             />
-            {/* Gradient blob 2 */}
+
+            {/* Ambient subtle glow left */}
             <div
-                className="absolute top-1/3 -right-20 w-96 h-96 rounded-full opacity-15 dark:opacity-8
-                    bg-gradient-to-br from-blue-400 to-teal-300 blur-3xl animate-blob animation-delay-2000"
+                className="absolute top-1/3 -left-40 w-[500px] h-[500px] rounded-full
+                    bg-gradient-to-tr from-primary/10 to-transparent blur-[140px]"
             />
-            {/* Gradient blob 3 */}
+
+            {/* Ambient subtle glow right */}
             <div
-                className="absolute -bottom-40 left-1/3 w-72 h-72 rounded-full opacity-20 dark:opacity-10
-                    bg-gradient-to-br from-cyan-400 to-blue-500 blur-3xl animate-blob animation-delay-4000"
+                className="absolute bottom-1/4 -right-40 w-[600px] h-[600px] rounded-full
+                    bg-gradient-to-bl from-accent/10 to-transparent blur-[150px]"
             />
-            {/* Subtle grid overlay */}
+
+            {/* Micro Dot Grid Overlay */}
             <div
-                className="absolute inset-0 opacity-[0.015] dark:opacity-[0.03]"
+                className="absolute inset-0 opacity-[0.25] dark:opacity-[0.2]"
                 style={{
-                    backgroundImage: `radial-gradient(circle, var(--primary) 1px, transparent 1px)`,
-                    backgroundSize: "40px 40px",
+                    backgroundImage: `radial-gradient(rgba(148, 163, 184, 0.25) 1px, transparent 1px)`,
+                    backgroundSize: "28px 28px",
+                    maskImage: "radial-gradient(ellipse 70% 70% at 50% 50%, #000 60%, transparent 100%)",
+                    WebkitMaskImage: "radial-gradient(ellipse 70% 70% at 50% 50%, #000 60%, transparent 100%)",
                 }}
             />
         </div>

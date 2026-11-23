@@ -6,13 +6,18 @@ export interface Social {
 
 export const socials: Social[] = [
     {
+        name: "Website",
+        url: "https://mfchmufid.my.id",
+        icon: "globe",
+    },
+    {
         name: "GitHub",
         url: "https://github.com/fensacel",
         icon: "github",
     },
     {
         name: "LinkedIn",
-        url: "https://linkedin.com/in/fensacel",
+        url: "https://linkedin.com/in/fachrimufidan",
         icon: "linkedin",
     },
     {

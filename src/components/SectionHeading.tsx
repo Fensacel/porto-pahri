@@ -9,16 +9,15 @@ interface SectionHeadingProps {
 
 export default function SectionHeading({ title, subtitle }: SectionHeadingProps) {
     return (
-        <ScrollReveal className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">
-                <span className="gradient-text">{title}</span>
+        <ScrollReveal className="retro-section-heading mb-10">
+            <h2 className="text-3xl md:text-5xl font-black tracking-tight text-foreground">
+                {title}
             </h2>
             {subtitle && (
-                <p className="text-muted-foreground max-w-2xl mx-auto text-lg">
+                <p className="text-muted-foreground max-w-2xl mx-auto text-base md:text-lg leading-relaxed">
                     {subtitle}
                 </p>
             )}
-            <div className="mt-4 mx-auto w-20 h-1 rounded-full bg-gradient-to-r from-primary to-accent" />
         </ScrollReveal>
     );
 }

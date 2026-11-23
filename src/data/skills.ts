@@ -5,10 +5,12 @@ export interface Skill {
 }
 
 export const skills: Skill[] = [
-    { name: "HTML", level: 90, color: "#e34f26" },
-    { name: "CSS", level: 85, color: "#1572b6" },
-    { name: "JavaScript", level: 80, color: "#f7df1e" },
-    { name: "PHP", level: 75, color: "#777bb4" },
-    { name: "React / Next.js", level: 70, color: "#61dafb" },
-    { name: "MySQL", level: 72, color: "#4479a1" },
+    { name: "Next.js", level: 92, color: "#000000" },
+    { name: "Laravel", level: 90, color: "#ff2d20" },
+    { name: "React", level: 88, color: "#61dafb" },
+    { name: "MySQL / Database", level: 88, color: "#4479a1" },
+    { name: "Tailwind CSS", level: 92, color: "#06b6d4" },
+    { name: "JavaScript / TypeScript", level: 86, color: "#f7df1e" },
+    { name: "PHP", level: 84, color: "#777bb4" },
+    { name: "Problem Solving", level: 88, color: "#10b981" },
 ];
