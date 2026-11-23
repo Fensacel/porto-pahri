@@ -3,8 +3,11 @@
 import Image from "next/image";
 import { motion } from "framer-motion";
 import { ArrowDown, Download, Github, Linkedin, Mail } from "lucide-react";
+import { useLang } from "@/context/LanguageContext";
 
 export default function Hero() {
+    const { t } = useLang();
+
     const handleScroll = (href: string) => {
         const el = document.querySelector(href);
         el?.scrollIntoView({ behavior: "smooth" });

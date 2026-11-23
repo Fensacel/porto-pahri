@@ -5,6 +5,7 @@ import { Send, Github, Linkedin, Instagram, Mail, CheckCircle } from "lucide-rea
 import SectionHeading from "./SectionHeading";
 import ScrollReveal from "./ScrollReveal";
 import { motion, AnimatePresence } from "framer-motion";
+import { useLang } from "@/context/LanguageContext";
 
 const socialLinks = [
     { name: "GitHub", icon: Github, url: "https://github.com/fensacel", color: "hover:text-gray-400" },
@@ -14,6 +15,7 @@ const socialLinks = [
 ];
 
 export default function Contact() {
+    const { t } = useLang();
     const [submitted, setSubmitted] = useState(false);
     const [formData, setFormData] = useState({
         name: "",
@@ -24,12 +26,10 @@ export default function Contact() {
     const handleSubmit = (e: React.FormEvent) => {
         e.preventDefault();
 
-        // Ganti dengan nomor WhatsApp Anda (gunakan format 62...)
-        const phoneNumber = "6285293467109"; // Ini contoh, ganti dengan nomor aslinya
+        const phoneNumber = "6285293467109";
         const whatsappMessage = `Halo Fachri! 👋\n\n*Nama:* ${formData.name}\n*Email:* ${formData.email}\n\n*Pesan:*\n${formData.message}`;
         const encodedMessage = encodeURIComponent(whatsappMessage);
 
-        // Membuka tab baru ke WhatsApp
         window.open(`https://wa.me/${phoneNumber}?text=${encodedMessage}`, "_blank");
 
         setSubmitted(true);
@@ -44,19 +44,19 @@ export default function Contact() {
             <div className="max-w-6xl mx-auto">
                 <SectionHeading
                     title="Contact"
-                    subtitle="Tertarik untuk berkolaborasi? Jangan ragu untuk menghubungi saya"
+                    subtitle={t(
+                        "Tertarik untuk berkolaborasi? Jangan ragu untuk menghubungi saya",
+                        "Interested in collaborating? Feel free to reach out to me"
+                    )}
                 />
 
                 <div className="grid md:grid-cols-2 gap-12">
                     {/* Form */}
                     <ScrollReveal direction="left">
-                        <div className="glass rounded-3xl p-8 border border-card-border">
-                            <div className="flex items-center gap-2 mb-6">
-                                <span className="w-2 h-2 rounded-full bg-primary" />
-                                <h3 className="text-base font-bold text-foreground tracking-tight">
-                                    Kirim Pesan Langsung
-                                </h3>
-                            </div>
+                        <div className="glass rounded-2xl p-8">
+                            <h3 className="text-lg font-semibold text-foreground mb-6">
+                                Kirim Pesan 💬
+                            </h3>
 
                             <AnimatePresence mode="wait">
                                 {submitted ? (
@@ -67,10 +67,10 @@ export default function Contact() {
                                         exit={{ opacity: 0 }}
                                         className="flex flex-col items-center justify-center py-12 text-center"
                                     >
-                                        <CheckCircle className="w-14 h-14 text-emerald-500 mb-4" />
-                                        <p className="text-base font-bold text-foreground">Pesan Terkirim!</p>
+                                        <CheckCircle className="w-16 h-16 text-green-500 mb-4" />
+                                        <p className="text-lg font-medium text-foreground">Pesan Terkirim!</p>
                                         <p className="text-sm text-muted-foreground mt-1">
-                                            Terima kasih, obrolan WhatsApp telah dibuka.
+                                            Terima kasih, saya akan segera membalas.
                                         </p>
                                     </motion.div>
                                 ) : (
@@ -83,8 +83,8 @@ export default function Contact() {
                                         className="space-y-4"
                                     >
                                         <div>
-                                            <label htmlFor="name" className="block text-xs font-mono text-muted-foreground mb-1.5 uppercase">
-                                                Nama Lengkap
+                                            <label htmlFor="name" className="block text-sm font-medium text-muted-foreground mb-1.5">
+                                                Nama
                                             </label>
                                             <input
                                                 id="name"
@@ -92,9 +92,9 @@ export default function Contact() {
                                                 required
                                                 value={formData.name}
                                                 onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                                                className="w-full px-4 py-3 rounded-2xl bg-muted/60 border border-card-border text-foreground text-sm
-                                   placeholder:text-muted-foreground/40 focus:outline-none focus:ring-2 focus:ring-primary/40
-                                   focus:border-primary/50 transition-all duration-200"
+                                                className="w-full px-4 py-3 rounded-xl bg-muted border border-card-border text-foreground
+                                   placeholder:text-muted-foreground/50 focus:outline-none focus:ring-2 focus:ring-primary/50
+                                   focus:border-primary/50 transition-all duration-300"
                                                 placeholder="Nama lengkap Anda"
                                             />
                                         </div>
@@ -117,8 +117,8 @@ export default function Contact() {
                                         </div>
 
                                         <div>
-                                            <label htmlFor="message" className="block text-xs font-mono text-muted-foreground mb-1.5 uppercase">
-                                                Isi Pesan
+                                            <label htmlFor="message" className="block text-sm font-medium text-muted-foreground mb-1.5">
+                                                Pesan
                                             </label>
                                             <textarea
                                                 id="message"
@@ -126,10 +126,10 @@ export default function Contact() {
                                                 rows={4}
                                                 value={formData.message}
                                                 onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-                                                className="w-full px-4 py-3 rounded-2xl bg-muted/60 border border-card-border text-foreground text-sm
-                                   placeholder:text-muted-foreground/40 focus:outline-none focus:ring-2 focus:ring-primary/40
-                                   focus:border-primary/50 transition-all duration-200 resize-none"
-                                                placeholder="Tulis pesan atau tawaran kolaborasi..."
+                                                className="w-full px-4 py-3 rounded-xl bg-muted border border-card-border text-foreground
+                                   placeholder:text-muted-foreground/50 focus:outline-none focus:ring-2 focus:ring-primary/50
+                                   focus:border-primary/50 transition-all duration-300 resize-none"
+                                                placeholder="Tulis pesan Anda di sini..."
                                             />
                                         </div>
 
@@ -140,7 +140,7 @@ export default function Contact() {
                                  hover:-translate-y-0.5 transition-all duration-200 cursor-pointer"
                                         >
                                             <Send className="w-4 h-4" />
-                                            Kirim via WhatsApp
+                                            Kirim Pesan
                                         </button>
                                     </motion.form>
                                 )}
@@ -150,10 +150,10 @@ export default function Contact() {
 
                     {/* Contact Info & Social */}
                     <ScrollReveal direction="right">
-                        <div className="space-y-4">
-                            <div className="glass rounded-3xl p-7 border border-card-border">
-                                <h3 className="text-xs font-mono uppercase text-muted-foreground mb-4">
-                                    Saluran Komunikasi
+                        <div className="space-y-6">
+                            <div className="glass rounded-2xl p-8">
+                                <h3 className="text-lg font-semibold text-foreground mb-4">
+                                    Info Kontak 📬
                                 </h3>
                                 <div className="space-y-3.5 text-sm">
                                     <p className="flex items-center gap-3">
@@ -197,12 +197,12 @@ export default function Contact() {
                                 </div>
                             </div>
 
-                            <div className="glass rounded-3xl p-7 border border-card-border">
-                                <h3 className="text-xs font-mono uppercase text-muted-foreground mb-2">
-                                    Domisili
+                            <div className="glass rounded-2xl p-8">
+                                <h3 className="text-lg font-semibold text-foreground mb-2">
+                                    Lokasi 📍
                                 </h3>
-                                <p className="text-sm text-foreground">
-                                    Kab. Tegal, Jawa Tengah, Indonesia (UTC+7)
+                                <p className="text-muted-foreground">
+                                    Slawi, Kabupaten Tegal, Jawa Tengah, Indonesia
                                 </p>
                             </div>
                         </div>

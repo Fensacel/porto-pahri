@@ -3,29 +3,7 @@
 import { Code2, Server, Lightbulb, Award, CheckCircle } from "lucide-react";
 import SectionHeading from "./SectionHeading";
 import ScrollReveal from "./ScrollReveal";
-
-const highlights = [
-    {
-        icon: Code2,
-        title: "Frontend Engineering",
-        desc: "Membangun antarmuka modern yang cepat, intuitif, dan responsif dengan Next.js, React, dan Tailwind CSS.",
-    },
-    {
-        icon: Server,
-        title: "Backend & Database",
-        desc: "Merancang arsitektur RESTful API yang scalable dan mengelola basis data relasional MySQL / Laravel.",
-    },
-    {
-        icon: Award,
-        title: "Sertifikasi Industri",
-        desc: "Tersertifikasi resmi BNSP Junior Web Developer dengan kompetensi standar nasional.",
-    },
-    {
-        icon: Lightbulb,
-        title: "Problem Solving",
-        desc: "Analisis sistem yang terstruktur, optimasi performa kode, dan pendekatan problem solving yang solutif.",
-    },
-];
+import { useLang } from "@/context/LanguageContext";
 
 const stats = [
     { label: "Sertifikasi BNSP", value: "Web Dev" },
@@ -35,12 +13,44 @@ const stats = [
 ];
 
 export default function About() {
+    const { lang, t } = useLang();
+
+    const highlights = [
+        {
+            icon: Code2,
+            title: "Frontend Dev",
+            desc: t(
+                "Membangun antarmuka web yang responsif dan interaktif dengan teknologi modern.",
+                "Building responsive and interactive web interfaces with modern technologies."
+            ),
+        },
+        {
+            icon: Server,
+            title: "Backend Dev",
+            desc: t(
+                "Mengembangkan server-side logic dan RESTful API yang scalable.",
+                "Developing scalable server-side logic and RESTful APIs."
+            ),
+        },
+        {
+            icon: Lightbulb,
+            title: "Problem Solving",
+            desc: t(
+                "Menganalisis masalah kompleks dan merancang solusi yang efisien.",
+                "Analyzing complex problems and designing efficient solutions."
+            ),
+        },
+    ];
+
     return (
         <section id="about" className="py-24 px-6">
             <div className="max-w-6xl mx-auto">
                 <SectionHeading
                     title="About Me"
-                    subtitle="Mengenal lebih dekat tentang perjalanan saya dalam dunia programming"
+                    subtitle={t(
+                        "Mengenal lebih dekat tentang perjalanan saya dalam dunia programming",
+                        "Getting to know more about my journey in the world of programming"
+                    )}
                 />
 
                 <div className="grid md:grid-cols-2 gap-12 items-start">

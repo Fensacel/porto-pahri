@@ -1,7 +1,9 @@
 export interface Project {
     id: number;
     title: string;
+    titleEn?: string;
     description: string;
+    descriptionEn?: string;
     techStack: string[];
     image: string;
     githubUrl: string;
@@ -14,8 +16,11 @@ export const projects: Project[] = [
     {
         id: 1,
         title: "Website Arsip & Manajemen File",
+        titleEn: "Archive & File Management Website",
         description:
             "Sistem arsip digital berbasis web untuk tata kelola dokumen yang aman, terstruktur, dan transparan. Dilengkapi manajemen hak akses multi-level (role-based), pencatatan surat masuk/keluar, audit riwayat, serta dashboard analytics.",
+        descriptionEn:
+            "A secure, transparent web-based digital archive system for document management. Includes role-based access, incoming and outgoing mail records, audit history, and analytics dashboards.",
         techStack: ["PHP", "MySQL", "Bootstrap", "JavaScript"],
         image: "/project/manajemen-surat.jpeg",
         githubUrl: "https://github.com/Fensacel/e-arsip",
@@ -26,6 +31,7 @@ export const projects: Project[] = [
     {
         id: 2,
         title: "Website Degrave Studio",
+        titleEn: "Degrave Studio Website",
         description:
             "Platform web resmi untuk Degrave Studio di bidang industri kreatif desain grafis dan percetakan. Menampilkan showcase portofolio interaktif, katalog layanan, form konsultasi pesanan, dan antarmuka responsif berperforma tinggi.",
         techStack: ["React", "Node.js", "Tailwind CSS"],
