@@ -1,6 +1,6 @@
 "use client";
 
-import { Code2, Server, Lightbulb, Award, CheckCircle } from "lucide-react";
+import { Code2, Server, Lightbulb, Award, ChartNoAxesCombined } from "lucide-react";
 import SectionHeading from "./SectionHeading";
 import ScrollReveal from "./ScrollReveal";
 import { useLang } from "@/context/LanguageContext";
@@ -8,7 +8,7 @@ import { useLang } from "@/context/LanguageContext";
 const stats = [
     { label: "Sertifikasi BNSP", value: "Web Dev" },
     { label: "Pendidikan", value: "Science Data" },
-    { label: "Tech Stack", value: "Next & Laravel" },
+    { label: "Tech Stack", value: "Web & Data" },
     { label: "Pengalaman Kerja", value: "CV Vodeco" },
 ];
 
@@ -38,6 +38,14 @@ export default function About() {
             desc: t(
                 "Menganalisis masalah kompleks dan merancang solusi yang efisien.",
                 "Analyzing complex problems and designing efficient solutions."
+            ),
+        },
+        {
+            icon: ChartNoAxesCombined,
+            title: "Data Visualization",
+            desc: t(
+                "Mengubah data menjadi insight melalui dashboard, grafik, dan visualisasi menggunakan Python.",
+                "Turning data into insights through dashboards, charts, and visualizations using Python."
             ),
         },
     ];

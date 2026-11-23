@@ -22,6 +22,7 @@ const coreTechStack: CoreTech[] = [
     { name: "TypeScript", logo: "/logos/typescript.svg", color: "#3178c6" },
     { name: "MySQL", logo: "/logos/mysql.svg", color: "#4479a1" },
     { name: "Tailwind CSS", logo: "/logos/tailwindcss.svg", color: "#06b6d4" },
+    { name: "Python", logo: "/logos/python.svg", color: "#3776ab" },
 ];
 
 /* ── Tech Ecosystem (pill badges) ─────────────────────── */
@@ -51,6 +52,8 @@ const techItems: TechItem[] = [
     { name: "Supabase", logo: "/logos/supabase.svg", color: "#3ecf8e" },
     { name: "Vercel", logo: "/logos/vercel.svg", color: "#000000" },
     { name: "Python", logo: "/logos/python.svg", color: "#3776ab" },
+    { name: "Data Analysis", logo: "/logos/python.svg", color: "#3776ab" },
+    { name: "Data Visualization", logo: "/logos/python.svg", color: "#3776ab" },
     { name: "Java", logo: "/logos/java.svg", color: "#e11d29" },
 ];
 

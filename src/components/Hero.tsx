@@ -13,7 +13,7 @@ export default function Hero() {
         el?.scrollIntoView({ behavior: "smooth" });
     };
 
-    const skills = ["React", "TypeScript", "Node.js", "Tailwind CSS", "MongoDB", "Git"];
+    const skills = ["React", "Python", "Data Viz", "TypeScript", "Node.js", "Git"];
 
     return (
         <section id="home" className="pt-[74px]">

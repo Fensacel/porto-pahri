@@ -13,4 +13,6 @@ export const skills: Skill[] = [
     { name: "JavaScript / TypeScript", level: 86, color: "#f7df1e" },
     { name: "PHP", level: 84, color: "#777bb4" },
     { name: "Problem Solving", level: 88, color: "#10b981" },
+    { name: "Python & Data Analysis", level: 82, color: "#3776ab" },
+    { name: "Data Visualization", level: 80, color: "#0078d7" },
 ];
